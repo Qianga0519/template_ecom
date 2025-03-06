@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web bán hàng</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+
+    <main>
+        <!-- Header start -->
+        <header class="header">
+            <nav class="navbar navbar-expand-md fixed-top custom-navbar">
+                <div class="container-xl px-2">
+                    <!-- Logo -->
+                    <a class="navbar-brand d-none  d-sm-flex align-items-center" href="#">
+                        <img src="./assets/images/logo.png" width="50" alt="">
+                        <span class="brand-name ms-2">ShopName</span>
+                    </a>
+                    <!-- Form search -->
+                    <form class="d-flex search-bar">
+                        <input class="form-control" type="search" placeholder="Search for products" aria-label="Search">
+                        <button class="btn search-btn" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <!-- Toggle button - Navbar collapse-->
+                    <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto d-none">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Products</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Electronics</a></li>
+                                    <li><a class="dropdown-item" href="#">Fashion</a></li>
+                                    <li><a class="dropdown-item" href="#">Home & Living</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Account / login-register-account -->
+                    <div class="navbar-account ">
+                        <div class="account-dropdown">
+                            <a href="#" class="account-icon" id="account-toggle">
+                                <img src="./assets/images/17580fa67278ff7a25e05b3c310a40e5.png" alt="User Avatar">
+                            </a>
+                            <ul class="dropdown-menu" id="account-menu">
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Orders</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="into-account d-flex  d-none gap-2">
+                            <a href="">Register</a>
+                            <div style="width: 2px" class="bg-dark"></div>
+                            <a href="">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Header end -->
+        <!-- Hero start -->
+        <section class="hero container-xl">
+            <div class="row">
+                <!-- Banner main -->
+                <div class="col-8 p-0 flex-grow-1 hero-main">
+                    <div id="carouselHero" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                        data-bs-interval="3000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./assets/images/Samsung-Galaxy-Social-Media-Banner-Design-1536x864.jpg"
+                                    class="" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/X14-PR-Banner1708935529-0.png" class="" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./assets/images/10132102.jpg" class="" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselHero"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                </div>
+                <!-- Banner extra -->
+                <div class="col-4 d-lg-block  d-none hero-extra">
+                    <div class="row">
+                        <div class="col-12 pe-0 hero-extra-item">
+                            <img src="./assets/images/17580fa67278ff7a25e05b3c310a40e5.png" alt="">
+                        </div>
+                        <div class="col-12 pe-0 hero-extra-item">
+                            <img src="./assets/images/file-1681987243213.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hero end -->
+        <!-- Category start -->
+        <section class="category my-5">
+            <div class="category-content container-lg border-top border-start  py-2">
+                <!-- Title -->
+                <div class="section-title text-left mb-2">
+                    <p class="fs-5 text-uppercase">category</p>
+                </div>
+                <!-- Swiper category -->
+                <div class="swiper-category overflow-hidden">
+                    <div class="swiper-wrapper">
+                        <!-- Swiper Item start-->
+                        <div class="category-item text-center swiper-slide py-2">
+                            <a href="#" class="category-link text-decoration-none "> 
+                                <img src="./assets/images/cate-smartphone.jpg" width="100" alt="">
+                                <p class="">Smart phone</p>
+                            </a>
+                        </div>
+                        <!-- Swiper Item end-->
+                        <!-- Genaral item -->
+                        <script>
+                            const SwiperCate = document.querySelector('.swiper-category .swiper-wrapper')
+                            for (let i = 1; i < 10; i++) {
+                                SwiperCate.innerHTML += `<div class="category-item text-center swiper-slide py-2">
+                            <a href="#" class="category-link text-decoration-none ">
+                                <div
+                                    class="category-icon mx-auto mb-1 d-flex align-items-center justify-content-center">
+                                    <img src="./assets/images/cate-laptop.webp" width="100" alt="">
+                                </div>
+                                <p class="">Smart phone${i}</p>
+                            </a>
+                        </div>`
+                            }
+                        </script>
+                    </div>
+                    <!-- Button controll swiper -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Category end -->
+        <!-- Flash sale start -->
+        <section class="flash-sale my-5">
+            <div class="flash-sale-content container-lg border-top border-start py-2">
+                <div class="section-title text-left mb-2 d-flex gap-3">
+                    <!-- Title -->
+                    <p class="fs-5 text-uppercase">flash sale</p>
+                    <!-- Time countdown -->
+                    <div class="countdown-expired d-flex gap-1 fw-bold  overflow-hidden" data-time="20">
+                        <span class="countdown-item">
+                            <span class="countdown-slide countdown-hours">00</span>
+                        </span>
+                        <span class="countdown-item">
+                            <span class="countdown-slide countdown-minutes">00</span>
+                        </span>
+                        <span class="countdown-item">
+                            <span class="countdown-slide countdown-seconds">00</span>
+                        </span>
+                    </div>
+                    <!-- View all -->
+                    <a href="" class="ms-auto view-all">View all<i class="bi bi-chevron-right"></i></a>
+                </div>
+                <div class="swiper-flash-sale overflow-hidden">
+                    <div class="swiper-wrapper grid-fs">
+                        <!-- Flash sale item start -->
+                        <a href="" class="fs-item text-center swiper-slide ">
+                            <div class="card text-center border-0">
+                                <img class="card-img-top" src="assets/images/cate-laptop.webp" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-price fs-6 fw-bold"><span>500.000</span></h4>
+                                    <p class="card-success rounded-pill fw-bold overflow-hidden">
+                                        <span class="process" style="width: 50%;"></span>
+                                        <span class="text-white  sold">sold 50 product</span>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Flash sale item end -->
+                        <!-- Genaral item -->
+                        <script>
+                            const FSItem = document.querySelector('.grid-fs')
+                            for (let i = 1; i < 18; i++) {
+                                FSItem.innerHTML += `<a href="" class="fs-item text-center swiper-slide ">
+                            <div class="card text-center border-0">
+                                <img class="card-img-top" src="assets/images/cate-laptop.webp" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-price fs-6 fw-bold"><span>500.00${i}</span></h4>
+                                    <p class="card-success rounded-pill fw-bold overflow-hidden">
+                                        <span class="process" style="width: 50%;"></span>
+                                        <span class="text-white  sold">sold 50 product</span>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </a>`
+                            }
+                        </script>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Flash sale  end -->
+        <!-- Product start -->
+        <section class="products my-5">
+            <div class="container-lg product-content py-2 ">
+                <!-- Title -->
+                <div class="section-title text-left d-flex mb-2">
+                    <p class="fs-5 text-uppercase">Product</p>
+
+                </div>
+                <div class="row g-3 grid-product">
+                    <!-- Product item start -->
+                    <div class="col-6 col-sm-4 col-md-3 col-xl-2 ">
+                        <a href="" class="card text-left product-item">
+                            <img class="card-img-top" src="assets/images/X14-PR-Banner1708935529-0.png" alt="Title" />
+                            <div class="card-body">
+                                <p class="card-name">Samsung Galaxy S25 Ultra Utimate</p>
+                                <div class="body-bottom">
+                                    <p class="card-price fs-5 "><span>500.000</span></p>
+                                    <p class="card-sold fs-6">Sold <span>400</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Product item end -->
+                    <!-- Product item start -->
+                    <div class="col-6 col-sm-4 col-md-3 col-xl-2 ">
+                        <a href="" class="card text-left product-item">
+                            <img class="card-img-top" src="assets/images/17580fa67278ff7a25e05b3c310a40e5.png"
+                                alt="Title" />
+                            <div class="card-body">
+                                <p class="card-name">Samsung Galaxy S25 Ultra Utimate</p>
+                                <div class="body-bottom">
+                                    <p class="card-price fs-5 "><span>500.000</span></p>
+                                    <p class="card-sold fs-6">Sold <span>400</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Product item end -->
+
+                </div>
+                <!-- Genaral product item -->
+                <script>
+                    const productItem = document.querySelector('.grid-product')
+                    for (let i = 1; i < 17; i++) {
+                        productItem.innerHTML += `<div class="col-6 col-sm-4 col-md-3 col-xl-2 ">
+                          <a href="" class="card text-left product-item">
+                            <img class="card-img-top" src="assets/images/cate-laptop.webp" alt="Title" />
+                            <div class="card-body">
+                                <p class="card-name">Samsung Galaxy S2${i} Ultra Utimate</p>
+                                <div class="body-bottom">
+                                    <p class="card-price fs-5 "><span>500.000</span></p>
+                                    <p class="card-sold fs-6">Sold <span>400</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>`
+                    }
+                </script>
+                <div class="view-more-product text-center my-5">
+                    <a href="" class="text-decoration-none  rounded px-5 py-2">View more</a>
+                </div>
+            </div>
+        </section>
+        <!-- Product end -->
+        <!-- Footer start -->
+        <footer class="py-4 mt-5">
+            <div class="container-lg">
+                <div class="row footer">
+                    <!-- Info -->
+                    <div class="col-sm-5 footer-info">
+                        <h5 class="title text-uppercase fw-bold">About us</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptatem nostrum eligendi
+                            natus maxime saepe ducimus et incidunt pariatur est veritatis cumque rerum necessitatibus
+                            voluptates tempora facilis perspiciatis quasi repellendus!</p>
+                        <a href="about.html"><img src="./assets/images/logo.png " class="w-50" alt=""></a>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="col-sm-3 footer-link">
+                        <h5 class="title text-uppercase fw-bold">Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none ">Trang chủ</a></li>
+                            <li><a href="#" class="text-decoration-none ">Sản phẩm</a></li>
+                            <li><a href="#" class="text-decoration-none ">Khuyến mãi</a></li>
+                            <li><a href="#" class="text-decoration-none ">Liên hệ</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-sm-4 footer-contact">
+                        <h5 class="title text-uppercase fw-bold">Contact</h5>
+                        <p><i class="bi bi-geo-alt-fill"></i> 123 Đường ABC, TP.HCM</p>
+                        <p><i class="bi bi-telephone-fill"></i> 0123 456 789</p>
+                        <p><i class="bi bi-envelope-fill"></i> support@example.com</p>
+                        <div class="d-flex gap-2 social-links">
+                            <a href="#" class=" fs-4"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class=" fs-4"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class=" fs-4"><i class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ?? -->
+                <div class="text-center pt-3 mt-3 border-top">
+                    <p>&copy; 2025 - Bản quyền thuộc về <a href="https://github.com/Qianga0519" target="_blank"
+                            class="text-decoration-none fw-bold">Qiang@0519</a></p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer end -->
+    </main>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>

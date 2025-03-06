@@ -1,0 +1,30 @@
+@use '_variables'as var;
+
+@mixin absoluteCenter($direction: '') {
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    transform: translate(-50%, -50%);
+
+    @if($direction=='y') {
+        top      : 50%;
+        transform: translateY(-50%);
+    }
+
+    @if($direction=='x') {
+        left     : 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@mixin media-breakpoint-down-value($value) {
+    @media screen and (max-width: $value) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-up-value($value) {
+    @media screen and (min-width: $value) {
+        @content;
+    }
+}

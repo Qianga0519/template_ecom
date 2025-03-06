@@ -1,0 +1,92 @@
+@use '_variables'as var;
+
+%section-title {
+    p {
+        position: relative;
+        color   : var.$text-dark;
+        color   : var.$text-dark;
+        display : inline-block;
+
+        &::after {
+            position        : absolute;
+            content         : '';
+            top             : 100%;
+            left            : 0;
+            width           : 70%;
+            height          : 1.5px;
+            background-color: var.$gray-darker;
+        }
+    }
+
+}
+
+%decoration70 {
+    position: relative;
+    color   : var.$text-dark;
+    color   : var.$text-dark;
+    display : inline-block;
+
+    &::after {
+        position        : absolute;
+        content         : '';
+        top             : 100%;
+        left            : 0;
+        width           : 70%;
+        height          : 1.5px;
+        background-color: var.$gray-darker;
+    }
+}
+
+%viewAll{
+     color: var.$blue;
+}
+
+%button-prev-next-swiper {
+    position: relative;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        position       : absolute;
+        top            : 50%;
+        transform      : translateY(-50%);
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        transition     : .1s linear;
+        opacity        : 0;
+
+
+        &::after {
+            font-size: 1.5rem;
+            padding  : 1rem;
+            color    : var.$blue;
+        }
+
+        &:hover {
+            i {
+                font-weight: bolder;
+            }
+        }
+    }
+
+    .swiper-button-next {
+        right: -20px;
+
+    }
+
+    .swiper-button-prev {
+        left: -20px;
+    }
+
+    &:hover {
+        .swiper-button-next {
+            right  : 0;
+            opacity: 1;
+        }
+
+        .swiper-button-prev {
+            left   : 0;
+            opacity: 1;
+        }
+    }
+}
