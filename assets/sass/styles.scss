@@ -43,11 +43,11 @@ html {
 body {
     background-color: var.$gray-light;
 
+
+
 }
 
-a {
-    text-decoration: none;
-}
+
 
 // Header
 header.header {
@@ -287,10 +287,10 @@ header.header {
 
                 a {
                     img {
-                        padding: 30px;
+                        padding     : 30px;
                         width       : 100%;
-                        height      :auto;
-                        aspect-ratio: 4/3; 
+                        height      : auto;
+                        aspect-ratio: 4/3;
                     }
                 }
 
@@ -447,9 +447,6 @@ header.header {
                     display: none;
                 }
             }
-
-
-
         }
 
         .product-item {
@@ -458,6 +455,10 @@ header.header {
             transition     : transform 0.3s ease-in-out;
             position       : relative;
             overflow       : hidden;
+
+            a {
+                text-decoration: none;
+            }
 
             &::before {
                 position        : absolute;
@@ -612,23 +613,113 @@ footer {
 
 }
 
-// RESPONSIVE
-@media (max-width: 768px) {
-    // #carouselHero {
-    //     .carousel-inner {
-    //         .carousel-item {
-    //             height: 40vh;
-    //         }
-    //     }
+// Product/shop page styles 
+.product-listing {
+    .options {
 
-    //     .carousel-caption {
-    //         h5 {
-    //             font-size: 1.5rem;
-    //         }
+        // < md filter
+        .btn-offcanvas-filter-mb {
+            border    : 1px solid var.$blue;
+            background: var.$white;
+            color     : var.$blue;
 
-    //         p {
-    //             font-size: 1rem;
-    //         }
-    //     }
-    // }
+            &:hover {
+
+                background: var.$blue;
+                color     : var.$white;
+            }
+        }
+
+
+
+        .btn-filter-newest,
+        .btn-filter-bseller,
+        select {
+            border: 1px solid var.$gray-darker;
+            color : var.$gray-darker;
+
+            &.active {
+                border    : 1px solid var.$blue;
+                background: var.$blue;
+                color     : var.$white;
+            }
+        }
+
+    }
+
+    .product-item {
+        perspective    : 1000px;
+        transform-style: preserve-3d;
+        transition     : transform 0.3s ease-in-out;
+        position       : relative;
+        overflow       : hidden;
+
+        a {
+            text-decoration: none;
+        }
+
+        &::before {
+            position        : absolute;
+            opacity         : 0;
+            top             : 0;
+            left            : 0;
+            width           : 100%;
+            height          : 100%;
+            content         : "View";
+            color           : var.$blue;
+            font-weight     : bold;
+            text-align      : center;
+            background-color: rgba(0, 0, 0, 0.1);
+            display         : flex;
+            justify-content : center;
+            align-items     : center;
+            font-size       : 1rem;
+            transition      : opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            font-family     : Verdana, Geneva, Tahoma, sans-serif;
+            transform       : scale(0.7);
+        }
+
+        img {
+            aspect-ratio: 4/3;
+            display     : block;
+            width       : 100%;
+            height      : auto;
+        }
+
+        .card-body {
+            padding: 10px;
+
+            .card-price {
+
+                color: var.$red;
+            }
+
+            .body-bottom {
+                display        : flex;
+                justify-content: space-between;
+                align-items    : center;
+
+                p {
+                    margin: 1rem 0 0.5rem 0;
+
+                }
+
+
+            }
+        }
+
+        &:hover {
+            transform: scale(1.05);
+
+            &::before {
+                opacity  : 1;
+                transform: scale(1);
+            }
+        }
+    }
+
 }
+
+
+// RESPONSIVE
+@media (max-width: 768px) {}

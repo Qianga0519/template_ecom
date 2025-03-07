@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <!-- Document metadata and character encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - ShopName</title>
+
+    <!-- CSS stylesheets from local node_modules -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <!-- CDN fallback for CSS libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+    <main>
+        <!-- Header section with navigation -->
+        <header class="header">
+            <nav class="navbar navbar-expand-md fixed-top custom-navbar">
+                <div class="container-xl px-2">
+                    <!-- Logo and brand name -->
+                    <a class="navbar-brand d-none d-sm-flex align-items-center" href="index.html">
+                        <img src="./assets/images/logo.png" width="50" alt="">
+                        <span class="brand-name ms-2">ShopName</span>
+                    </a>
+
+                    <!-- Search form -->
+                    <form class="d-flex search-bar">
+                        <input class="form-control" type="search" placeholder="Search for products" aria-label="Search">
+                        <button class="btn search-btn" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <!-- Navbar toggle button (hidden) -->
+                    <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navigation links (hidden) -->
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto d-none">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="product-index.html">Products</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Electronics</a></li>
+                                    <li><a class="dropdown-item" href="#">Fashion</a></li>
+                                    <li><a class="dropdown-item" href="#">Home & Living</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- User account section -->
+                    <div class="navbar-account ">
+                        <!-- Dropdown for logged-in users -->
+                        <div class="account-dropdown">
+                            <a href="#" class="account-icon" id="account-toggle">
+                                <img src="./assets/images/17580fa67278ff7a25e05b3c310a40e5.png" alt="User Avatar">
+                            </a>
+                            <ul class="dropdown-menu" id="account-menu">
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Orders</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Login/Register links (hidden) -->
+                        <div class="into-account d-flex d-none gap-2">
+                            <a href="">Register</a>
+                            <div style="width: 2px" class="bg-dark"></div>
+                            <a href="">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- End of header section -->
+        <!-- Header end -->
+        <!-- Product Filters and Listing -->
+        <section class="product-listing my-4">
+            <div class="container-xl">
+                <div class="row">
+                    <!-- Sidebar Filters On < md -->
+                    <div class="offcanvas offcanvas-end d-block d-md-none offcv-filter" tabindex="-1"
+                        id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasRightLabel">Filters</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="filter-sidebar options bg-white p-3 rounded shadow-sm overflow-auto">
+                                <!-- Options Filter -->
+                                <div class="filter-section d-flex gap-2 mb-4">
+                                    <button class="btn btn-sm  btn-filter-newest active">Newest</button>
+                                    <button class="btn btn-sm  btn-filter-bseller">Best seller</button>
+                                    <select class="form-select form-select-sm" style="width: auto;">
+                                        <option selected>Price</option>
+                                        <option>Low to High</option>
+                                        <option>Higt to Low</option>
+                                    </select>
+                                </div>
+                                <!-- Categories Filter -->
+                                <div class="filter-section mb-4">
+                                    <h6 class="fw-bold">Categories</h6>
+                                    <div class="check-filter d-flex flex-wrap">
+                                        <div class="form-check  w-50 py-1">
+                                            <input class="form-check-input" type="checkbox" value="" id="cat1">
+                                            <label class="form-check-label" for="cat1">
+                                                Smartphones
+                                            </label>
+                                        </div>
+                                        <div class="form-check w-50 py-1">
+                                            <input class="form-check-input" type="checkbox" value="" id="cat2">
+                                            <label class="form-check-label" for="cat2">
+                                                Laptops
+                                            </label>
+                                        </div>
+                                        <div class="form-check  w-50 py-1">
+                                            <input class="form-check-input" type="checkbox" value="" id="cat3">
+                                            <label class="form-check-label" for="cat3">
+                                                Tablets
+                                            </label>
+                                        </div>
+                                        <div class="form-check w-50 py-1">
+                                            <input class="form-check-input" type="checkbox" value="" id="cat4">
+                                            <label class="form-check-label" for="cat4">
+                                                Accessories
+                                            </label>
+                                        </div>
+                                        <div class="form-check  w-50 py-1">
+                                            <input class="form-check-input" type="checkbox" value="" id="cat5">
+                                            <label class="form-check-label" for="cat5">
+                                                Wearables
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Price Range Filter -->
+                                <div class="filter-section mb-4">
+                                    <h6 class="fw-bold">Price Range</h6>
+                                    <div class="price-range pt-2 d-flex gap-1 flex-wrap">
+                                        <div class="input-group w-75">
+                                            <span class="input-group-text">Min</span>
+                                            <input type="number" class="form-control" placeholder="0">
+                                        </div>
+                                        <div class="input-group w-75">
+                                            <span class="input-group-text">Max</span>
+                                            <input type="number" class="form-control" placeholder="10000000">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Brand Filter -->
+                                <div class="filter-section mb-4">
+                                    <h6 class="fw-bold">Brand</h6>
+                                    <div class="check-filter d-flex flex-wrap">
+                                        <div class="form-check w-50 py-1">
+                                            <input class="form-check-input" type="checkbox" value="" id="brand1">
+                                            <label class="form-check-label" for="brand1">
+                                                Samsung
+                                            </label>
+                                        </div>
+                                        <div class="form-check w-50 py-1">
+                                            <input class="form-check-input" type="checkbox" value="" id="brand2">
+                                            <label class="form-check-label" for="brand2">
+                                                Apple
+                                            </label>
+                                        </div>
+                                        <div class="form-check w-50 py-1">
+                                            <input class="form-check-input" type="checkbox" value="" id="brand3">
+                                            <label class="form-check-label" for="brand3">
+                                                Xiaomi
+                                            </label>
+                                        </div>
+                                        <div class="form-check w-50 py-1">
+                                            <input class="form-check-input" type="checkbox" value="" id="brand4">
+                                            <label class="form-check-label" for="brand4">
+                                                Oppo
+                                            </label>
+                                        </div>
+                                        <div class="form-check w-50 py-1">
+                                            <input class="form-check-input" type="checkbox" value="" id="brand5">
+                                            <label class="form-check-label" for="brand5">
+                                                Vivo
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Rating Filter -->
+                                <div class="filter-section mb-4">
+                                    <h6 class="fw-bold">Rating</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rating" id="rating5">
+                                        <label class="form-check-label" for="rating5">
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rating" id="rating4">
+                                        <label class="form-check-label" for="rating4">
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star text-warning"></i> & up
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rating" id="rating3">
+                                        <label class="form-check-label" for="rating3">
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star text-warning"></i>
+                                            <i class="bi bi-star text-warning"></i> & up
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Apply Filters Button -->
+                                <button type="button" class="btn btn-primary w-100 text-reset"
+                                    data-bs-dismiss="offcanvas" aria-label="Close">Apply Filters</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Sidebar Filters On >= md-->
+                    <div class="col-md-3 d-none d-md-flex mb-4">
+                        <div class="filter-sidebar bg-white p-3 rounded shadow-sm">
+                            <h5 class="fw-bold mb-3">Filters</h5>
+
+                            <!-- Categories Filter -->
+                            <div class="filter-section mb-4">
+                                <h6 class="fw-bold">Categories</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat1md">
+                                    <label class="form-check-label" for="cat1md">
+                                        Smartphones
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat2md">
+                                    <label class="form-check-label" for="cat2md">
+                                        Laptops
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat3md">
+                                    <label class="form-check-label" for="cat3md">
+                                        Tablets
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat4md">
+                                    <label class="form-check-label" for="cat4md">
+                                        Accessories
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat5md">
+                                    <label class="form-check-label" for="cat5md">
+                                        Wearables
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Price Range Filter -->
+                            <div class="filter-section mb-4">
+                                <h6 class="fw-bold">Price Range</h6>
+                                <div class="price-range">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Min</span>
+                                        <input type="number" class="form-control" placeholder="0">
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-text">Max</span>
+                                        <input type="number" class="form-control" placeholder="10000000">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Brand Filter -->
+                            <div class="filter-section mb-4">
+                                <h6 class="fw-bold">Brand</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="brand1md">
+                                    <label class="form-check-label" for="brand1md">
+                                        Samsung
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="brand2md">
+                                    <label class="form-check-label" for="brand2md">
+                                        Apple
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="brand3md">
+                                    <label class="form-check-label" for="brand3md">
+                                        Xiaomi
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="brand4md">
+                                    <label class="form-check-label" for="brand4md">
+                                        Oppo
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="brand5md">
+                                    <label class="form-check-label" for="brand5md">
+                                        Vivo
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Rating Filter -->
+                            <div class="filter-section mb-4">
+                                <h6 class="fw-bold">Rating</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="rating" id="rating5md">
+                                    <label class="form-check-label" for="rating5md">
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="rating" id="rating4md">
+                                    <label class="form-check-label" for="rating4md">
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star text-warning"></i> & up
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="rating" id="rating3md">
+                                    <label class="form-check-label" for="rating3md">
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star text-warning"></i>
+                                        <i class="bi bi-star text-warning"></i> & up
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Apply Filters Button -->
+                            <button class="btn btn-primary w-100">Apply Filters</button>
+                        </div>
+                    </div>
+                    <!-- Product Grid -->
+                    <div class="col-md-9" style="font-size: .775rem;">
+                        <!-- Sort and View Options -->
+                        <div
+                            class="options d-flex justify-content-between align-items-center bg-white p-3 rounded shadow-sm mb-4">
+                            <div class="results-count">
+                                <span>Showing 1-24 of 120 products</span>
+                            </div>
+                            <div class="sort-options d-flex align-items-center gap-1">
+                                <button class="btn btn-sm d-none d-md-block btn-filter-newest active">Newest</button>
+                                <button class="btn btn-sm d-none d-md-block btn-filter-bseller">Best seller</button>
+                                <select class="form-select form-select-sm" style="width: auto;">
+                                    <option selected>Price</option>
+                                    <option>Low to High</option>
+                                    <option>Higt to Low</option>
+                                </select>
+
+                                <div class="view-options ms-3 d-flex gap-1">
+                                    <button class="btn btn-sm btn-outline-secondary active"><i
+                                            class="bi bi-grid-3x3-gap-fill"></i></button>
+                                    <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-list"></i></button>
+
+                                </div>
+                                <button class="btn btn-sm btn-offcanvas-filter-mb d-block d-md-none" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">Filter</button>
+
+                            </div>
+                        </div>
+
+                        <!-- Products Grid -->
+                        <div class="row g-3 product-grid">
+                            <!-- Product item 1 -->
+                            <div class="col-6 col-sm-4 col-xl-3">
+                                <a href="product-detail.html" class="card text-left product-item text-decoration-none">
+                                    <div class="position-absolute top-0 end-0 p-2">
+                                        <span class="badge bg-danger">-20%</span>
+                                    </div>
+                                    <img class="card-img-top" src="assets/images/X14-PR-Banner1708935529-0.png"
+                                        alt="Samsung Galaxy S25" />
+                                    <div class="card-body border border-d fs-6">
+                                        <p class="card-name">Samsung Galaxy S25 Ultra</p>
+                                        <p class="card-price"><span>24.990.000₫</span></p>
+                                        <div class="body-bottom d-flex ">
+                                            <p class="card-sold">Sold <span>1240</span></p>
+                                            <div class="product-rating ms-auto">
+                                                <div class="stars">
+                                                    <span>4.5</span>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Generate more product items -->
+                            <script>
+                                const productGrid = document.querySelector('.product-grid');
+                                const productNames = [
+                                    'Xiaomi 14 Ultra', 'Oppo Find X7', 'Vivo X100 Pro',
+                                    'Google Pixel 8 Pro', 'OnePlus 12', 'Realme GT 5 Pro',
+                                    'Huawei P60 Pro', 'Sony Xperia 1 V', 'Asus ROG Phone 8',
+                                    'Motorola Edge 40 Pro', 'Nothing Phone 2', 'Honor Magic 6 Pro'
+                                ];
+
+                                const prices = [
+                                    '19.990.000₫', '18.490.000₫', '22.990.000₫',
+                                    '23.490.000₫', '16.990.000₫', '14.990.000₫',
+                                    '21.990.000₫', '24.990.000₫', '19.990.000₫',
+                                    '17.990.000₫', '15.990.000₫', '20.990.000₫'
+                                ];
+
+                                const soldCounts = [
+                                    '850', '720', '630', '540', '490', '380',
+                                    '420', '310', '290', '270', '350', '240'
+                                ];
+
+                                const ratings = [
+                                    '4.7', '4.5', '4.8', '4.6', '4.4', '4.3',
+                                    '4.5', '4.2', '4.7', '4.4', '4.1', '4.6'
+                                ];
+
+                                const reviewCounts = [
+                                    '87', '65', '92', '78', '56', '43',
+                                    '61', '38', '72', '51', '47', '59'
+                                ];
+
+                                const images = [
+                                    'cate-laptop.webp', 'cate-smartphone.jpg', 'file-1681987243213.webp',
+                                    'cate-laptop.webp', 'cate-smartphone.jpg', 'file-1681987243213.webp',
+                                    'cate-laptop.webp', 'cate-smartphone.jpg', 'file-1681987243213.webp',
+                                    'cate-laptop.webp', 'cate-smartphone.jpg', 'file-1681987243213.webp'
+                                ];
+
+                                const badges = [
+                                    '<span class="badge bg-danger">-15%</span>',
+                                    '<span class="badge bg-primary">New</span>',
+                                    '<span class="badge bg-success">Best Seller</span>',
+                                    '',
+                                    '<span class="badge bg-warning">Limited</span>',
+                                    '',
+                                    '<span class="badge bg-danger">-10%</span>',
+                                    '<span class="badge bg-primary">New</span>',
+                                    '<span class="badge bg-success">Best Seller</span>',
+                                    '',
+                                    '<span class="badge bg-warning">Limited</span>',
+                                    ''
+                                ];
+
+                                for (let i = 0; i < 12; i++) {
+                                    const rating = parseFloat(ratings[i]);
+                                    const badgeHtml = badges[i] ?
+                                        `<div class="position-absolute top-0 end-0 p-2">${badges[i]}</div>` : '';
+
+                                    productGrid.innerHTML += `<div class="col-6 col-sm-4 col-xl-3">
+                                <a href="product-detail.html" class="card text-left product-item text-decoration-none">
+                                   ${badgeHtml}
+                                    <img class="card-img-top" src="assets/images/${images[i]}"
+                                        alt="${productNames[i]}" />
+                                    <div class="card-body border border-d fs-6">
+                                        <p class="card-name">${productNames[i]}</p>
+                                        <p class="card-price "><span>${prices[i]}</span></p>
+                                        <div class="body-bottom d-flex ">
+                                            <p class="card-sold ">Sold <span>${soldCounts[i]}</span></p>
+                                            <div class="product-rating ms-auto">
+                                                <div class="stars">
+                                                    <span>${ratings[i]}</span>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>`;
+                                }
+                            </script>
+                        </div>
+
+                        <!-- Pagination -->
+                        <nav aria-label="Product pagination" class="my-4">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer start -->
+        <footer class="py-4 mt-5">
+            <div class="container-lg">
+                <div class="row footer">
+                    <!-- Info -->
+                    <div class="col-sm-5 footer-info">
+                        <h5 class="title text-uppercase fw-bold">About us</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptatem nostrum eligendi
+                            natus maxime saepe ducimus et incidunt pariatur est veritatis cumque rerum necessitatibus
+                            voluptates tempora facilis perspiciatis quasi repellendus!</p>
+                        <a href="about.html"><img src="./assets/images/logo.png " class="w-50" alt=""></a>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="col-sm-3 footer-link">
+                        <h5 class="title text-uppercase fw-bold">Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="text-decoration-none ">Trang chủ</a></li>
+                            <li><a href="product-index.html" class="text-decoration-none ">Sản phẩm</a></li>
+                            <li><a href="#" class="text-decoration-none ">Khuyến mãi</a></li>
+                            <li><a href="#" class="text-decoration-none ">Liên hệ</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-sm-4 footer-contact">
+                        <h5 class="title text-uppercase fw-bold">Contact</h5>
+                        <p><i class="bi bi-geo-alt-fill"></i> 123 Đường ABC, TP.HCM</p>
+                        <p><i class="bi bi-telephone-fill"></i> 0123 456 789</p>
+                        <p><i class="bi bi-envelope-fill"></i> support@example.com</p>
+                        <div class="d-flex gap-2 social-links">
+                            <a href="#" class=" fs-4"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class=" fs-4"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class=" fs-4"><i class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-center pt-3 mt-3 border-top">
+                    <p>&copy; 2025 - Bản quyền thuộc về <a href="https://github.com/Qianga0519" target="_blank"
+                            class="text-decoration-none fw-bold">Qiang@0519</a></p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer end -->
+    </main>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+
+    <!-- cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./assets/js/app.js"></script>
+
+    <!-- Additional script for product page functionality -->
+    <script>
+        // Toggle view mode (grid/list)
+        document.querySelectorAll('.view-options .btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.view-options .btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                if (this.querySelector('.bi-list')) {
+                    document.querySelector('.product-grid').classList.add('list-view');
+                } else {
+                    document.querySelector('.product-grid').classList.remove('list-view');
+                }
+            });
+        });
+
+        // Price range validation
+        const minPrice = document.querySelector('.price-range input:first-of-type');
+        const maxPrice = document.querySelector('.price-range input:last-of-type');
+
+        minPrice.addEventListener('change', function () {
+            if (parseInt(this.value) > parseInt(maxPrice.value)) {
+                this.value = maxPrice.value;
+            }
+        });
+
+        maxPrice.addEventListener('change', function () {
+            if (parseInt(this.value) < parseInt(minPrice.value)) {
+                this.value = minPrice.value;
+            }
+        });
+    </script>
+</body>
+
+</html>

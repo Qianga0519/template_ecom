@@ -105,10 +105,6 @@ body {
   background-color: rgb(240, 242, 245);
 }
 
-a {
-  text-decoration: none;
-}
-
 header.header {
   margin-bottom: 80px;
 }
@@ -383,6 +379,9 @@ header.header .navbar-account .into-account a:hover {
   position: relative;
   overflow: hidden;
 }
+.products .product-content .product-item a {
+  text-decoration: none;
+}
 .products .product-content .product-item::before {
   position: absolute;
   opacity: 0;
@@ -492,6 +491,86 @@ footer .footer-contact .social-links a:hover {
 }
 footer .footer-contact .social-links a:hover i {
   transform: rotateY(180deg);
+}
+
+.product-listing .options .btn-offcanvas-filter-mb {
+  border: 1px solid rgb(24, 119, 242);
+  background: rgb(255, 255, 255);
+  color: rgb(24, 119, 242);
+}
+.product-listing .options .btn-offcanvas-filter-mb:hover {
+  background: rgb(24, 119, 242);
+  color: rgb(255, 255, 255);
+}
+.product-listing .options .btn-filter-newest,
+.product-listing .options .btn-filter-bseller,
+.product-listing .options select {
+  border: 1px solid rgb(101, 103, 107);
+  color: rgb(101, 103, 107);
+}
+.product-listing .options .btn-filter-newest.active,
+.product-listing .options .btn-filter-bseller.active,
+.product-listing .options select.active {
+  border: 1px solid rgb(24, 119, 242);
+  background: rgb(24, 119, 242);
+  color: rgb(255, 255, 255);
+}
+.product-listing .product-item {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+.product-listing .product-item a {
+  text-decoration: none;
+}
+.product-listing .product-item::before {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "View";
+  color: rgb(24, 119, 242);
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transform: scale(0.7);
+}
+.product-listing .product-item img {
+  aspect-ratio: 4/3;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.product-listing .product-item .card-body {
+  padding: 10px;
+}
+.product-listing .product-item .card-body .card-price {
+  color: rgb(255, 0, 51);
+}
+.product-listing .product-item .card-body .body-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-listing .product-item .card-body .body-bottom p {
+  margin: 1rem 0 0.5rem 0;
+}
+.product-listing .product-item:hover {
+  transform: scale(1.05);
+}
+.product-listing .product-item:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /*# sourceMappingURL=styles.css.map */

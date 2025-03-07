@@ -2,51 +2,56 @@
 <html lang="vi">
 
 <head>
+    <!-- Document metadata and character encoding -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang web bán hàng</title>
+    <title>Sản phẩm - ShopName</title>
+
+    <!-- CSS stylesheets from local node_modules -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <!-- cdn -->
+
+    <!-- CDN fallback for CSS libraries -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
 </head>
 
 <body>
-
     <main>
-        <!-- Header start -->
+        <!-- Header section with navigation -->
         <header class="header">
             <nav class="navbar navbar-expand-md fixed-top custom-navbar">
                 <div class="container-xl px-2">
-                    <!-- Logo -->
-                    <a class="navbar-brand d-none  d-sm-flex align-items-center" href="#">
+                    <!-- Logo and brand name -->
+                    <a class="navbar-brand d-none d-sm-flex align-items-center" href="index.html">
                         <img src="./assets/images/logo.png" width="50" alt="">
                         <span class="brand-name ms-2">ShopName</span>
                     </a>
-                    <!-- Form search -->
+
+                    <!-- Search form -->
                     <form class="d-flex search-bar">
                         <input class="form-control" type="search" placeholder="Search for products" aria-label="Search">
                         <button class="btn search-btn" type="submit"><i class="bi bi-search"></i></button>
                     </form>
 
-                    <!-- Toggle button - Navbar collapse-->
+                    <!-- Navbar toggle button (hidden) -->
                     <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
+                    <!-- Navigation links (hidden) -->
                     <div class="collapse navbar-collapse " id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto d-none">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Home</a>
+                                <a class="nav-link" href="index.html">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Products</a>
+                                <a class="nav-link active" href="product-index.html">Products</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -60,10 +65,11 @@
                                 </ul>
                             </li>
                         </ul>
-
                     </div>
-                    <!-- Account / login-register-account -->
+
+                    <!-- User account section -->
                     <div class="navbar-account ">
+                        <!-- Dropdown for logged-in users -->
                         <div class="account-dropdown">
                             <a href="#" class="account-icon" id="account-toggle">
                                 <img src="./assets/images/17580fa67278ff7a25e05b3c310a40e5.png" alt="User Avatar">
@@ -74,7 +80,9 @@
                                 <li><a href="#">Logout</a></li>
                             </ul>
                         </div>
-                        <div class="into-account d-flex  d-none gap-2">
+
+                        <!-- Login/Register links (hidden) -->
+                        <div class="into-account d-flex d-none gap-2">
                             <a href="">Register</a>
                             <div style="width: 2px" class="bg-dark"></div>
                             <a href="">Login</a>
@@ -83,7 +91,7 @@
                 </div>
             </nav>
         </header>
-        <!-- Header end -->
+        <!-- End of header section -->
         <!-- Hero start -->
         <section class="hero container-xl">
             <div class="row">
@@ -142,7 +150,7 @@
                     <div class="swiper-wrapper">
                         <!-- Swiper Item start-->
                         <div class="category-item text-center swiper-slide py-2">
-                            <a href="#" class="category-link text-decoration-none ">
+                            <a href="shop.html" class="category-link text-decoration-none ">
                                 <img src="./assets/images/cate-smartphone.jpg" width="100" alt="">
                                 <p class="">Smart phone</p>
                             </a>
@@ -153,7 +161,7 @@
                             const SwiperCate = document.querySelector('.swiper-category .swiper-wrapper')
                             for (let i = 1; i < 10; i++) {
                                 SwiperCate.innerHTML += `<div class="category-item text-center swiper-slide py-2">
-                            <a href="#" class="category-link text-decoration-none ">
+                            <a href="shop.html" class="category-link text-decoration-none ">
                                 <div
                                     class="category-icon mx-auto mb-1 d-flex align-items-center justify-content-center">
                                     <img src="./assets/images/cate-laptop.webp" width="100" alt="">
@@ -190,12 +198,13 @@
                         </span>
                     </div>
                     <!-- View all -->
-                    <a href="" class="ms-auto view-all">View all<i class="bi bi-chevron-right"></i></a>
+                    <a href="shop.html" class="ms-auto view-all text-decoration-none">View all<i
+                            class="bi bi-chevron-right"></i></a>
                 </div>
                 <div class="swiper-flash-sale overflow-hidden">
                     <div class="swiper-wrapper grid-fs">
                         <!-- Flash sale item start -->
-                        <a href="" class="fs-item text-center swiper-slide ">
+                        <a href="shop.html" class="fs-item text-center swiper-slide text-decoration-none">
                             <div class="card text-center border-0">
                                 <img class="card-img-top" src="assets/images/cate-laptop.webp" alt="Title" />
                                 <div class="card-body">
@@ -213,7 +222,7 @@
                         <script>
                             const FSItem = document.querySelector('.grid-fs')
                             for (let i = 1; i < 18; i++) {
-                                FSItem.innerHTML += `<a href="" class="fs-item text-center swiper-slide ">
+                                FSItem.innerHTML += `<a href="shop.html" class="fs-item text-center swiper-slide text-decoration-none">
                             <div class="card text-center border-0">
                                 <img class="card-img-top" src="assets/images/cate-laptop.webp" alt="Title" />
                                 <div class="card-body">
@@ -246,7 +255,7 @@
                 <div class="row g-3 grid-product">
                     <!-- Product item start -->
                     <div class="col-6 col-sm-4 col-md-3 col-xl-2 ">
-                        <a href="" class="card text-left product-item">
+                        <a href="shop.html" class="card text-left product-item text-decoration-none">
                             <img class="card-img-top" src="assets/images/X14-PR-Banner1708935529-0.png" alt="Title" />
                             <div class="card-body">
                                 <p class="card-name">Samsung Galaxy S25 Ultra Utimate</p>
@@ -260,7 +269,7 @@
                     <!-- Product item end -->
                     <!-- Product item start -->
                     <div class="col-6 col-sm-4 col-md-3 col-xl-2 ">
-                        <a href="" class="card text-left product-item">
+                        <a href="shop.html" class="card text-left product-item text-decoration-none">
                             <img class="card-img-top" src="assets/images/17580fa67278ff7a25e05b3c310a40e5.png"
                                 alt="Title" />
                             <div class="card-body">
@@ -280,7 +289,7 @@
                     const productItem = document.querySelector('.grid-product')
                     for (let i = 1; i < 17; i++) {
                         productItem.innerHTML += `<div class="col-6 col-sm-4 col-md-3 col-xl-2 ">
-                          <a href="" class="card text-left product-item">
+                          <a href="shop.html" class="card text-left product-item text-decoration-none">
                             <img class="card-img-top" src="assets/images/cate-laptop.webp" alt="Title" />
                             <div class="card-body">
                                 <p class="card-name">Samsung Galaxy S2${i} Ultra Utimate</p>
@@ -294,7 +303,7 @@
                     }
                 </script>
                 <div class="view-more-product text-center my-5">
-                    <a href="" class="text-decoration-none  rounded px-5 py-2">View more</a>
+                    <a href="shop.html" class="text-decoration-none  rounded px-5 py-2">View more</a>
                 </div>
             </div>
         </section>
@@ -316,10 +325,10 @@
                     <div class="col-sm-3 footer-link">
                         <h5 class="title text-uppercase fw-bold">Links</h5>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-decoration-none ">Trang chủ</a></li>
-                            <li><a href="#" class="text-decoration-none ">Sản phẩm</a></li>
-                            <li><a href="#" class="text-decoration-none ">Khuyến mãi</a></li>
-                            <li><a href="#" class="text-decoration-none ">Liên hệ</a></li>
+                            <li><a href="shop.html" class="text-decoration-none ">Trang chủ</a></li>
+                            <li><a href="shop.html" class="text-decoration-none ">Sản phẩm</a></li>
+                            <li><a href="shop.html" class="text-decoration-none ">Khuyến mãi</a></li>
+                            <li><a href="shop.html" class="text-decoration-none ">Liên hệ</a></li>
                         </ul>
                     </div>
 
@@ -330,9 +339,9 @@
                         <p><i class="bi bi-telephone-fill"></i> 0123 456 789</p>
                         <p><i class="bi bi-envelope-fill"></i> support@example.com</p>
                         <div class="d-flex gap-2 social-links">
-                            <a href="#" class=" fs-4"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class=" fs-4"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class=" fs-4"><i class="bi bi-twitter"></i></a>
+                            <a href="shop.html" class=" fs-4"><i class="bi bi-facebook"></i></a>
+                            <a href="shop.html" class=" fs-4"><i class="bi bi-instagram"></i></a>
+                            <a href="shop.html" class=" fs-4"><i class="bi bi-twitter"></i></a>
                         </div>
                     </div>
                 </div>
