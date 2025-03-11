@@ -790,8 +790,22 @@ footer {
 // Cart page styles 
 .cart {
     table {
-        tbody {
-           
+        tbody {}
+    }
+}
+
+// profile page styles 
+.profile {
+    #profile {
+        .profile-image {
+            img {
+                width        : 100%;
+                height       : 100%;
+                max-width    : 200px;
+                max-height   : 200px;
+                object-fit   : cover;
+                border-radius: 50%;
+            }
         }
     }
 }

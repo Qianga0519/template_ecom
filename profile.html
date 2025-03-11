@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <!-- Document metadata and character encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - ShopName</title>
+
+    <!-- CSS stylesheets from local node_modules -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <!-- CDN fallback for CSS libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+    <main>
+        <!-- Header section with navigation -->
+        <header class="header">
+            <nav class="navbar navbar-expand-md fixed-top custom-navbar">
+                <div class="container-xl px-2">
+                    <!-- Logo and brand name -->
+                    <a class="navbar-brand d-none d-sm-flex align-items-center" href="index.html">
+                        <img src="./assets/images/logo.png" width="50" alt="">
+                        <span class="brand-name ms-2">ShopName</span>
+                    </a>
+
+                    <!-- Search form -->
+                    <form class="d-flex search-bar">
+                        <input class="form-control" type="search" placeholder="Search for products" aria-label="Search">
+                        <button class="btn search-btn" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <!-- Navbar toggle button (hidden) -->
+                    <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navigation links (hidden) -->
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto d-none">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="product-index.html">Products</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Electronics</a></li>
+                                    <li><a class="dropdown-item" href="#">Fashion</a></li>
+                                    <li><a class="dropdown-item" href="#">Home & Living</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- User account section -->
+                    <div class="navbar-account ">
+                        <!-- Dropdown for logged-in users -->
+                        <div class="account-dropdown">
+                            <a href="cart.html" class="btn cart-icon border-1 bg"><i class="bi bi-cart"></i></a>
+
+                            <a href="#" class="account-icon" id="account-toggle">
+                                <img src="./assets/images/17580fa67278ff7a25e05b3c310a40e5.png" alt="User Avatar">
+                            </a>
+                            <ul class="dropdown-menu" id="account-menu">
+                                <li><a href="profile.html">Profile</a></li>
+                                <li><a href="#">Orders</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Login/Register links (hidden) -->
+                        <div class="into-account d-flex d-none gap-2">
+                            <a href="">Register</a>
+                            <div style="width: 2px" class="bg-dark"></div>
+                            <a href="">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- End of header section -->
+        <!-- Header end -->
+        <section class="profile">
+            <div class="container-lg mt-4">
+                <div class="row">
+                    <!-- Sidebar -->
+                    <aside class="col-md-3">
+                        <div class="list-group">
+                            <a href="#profile" class="list-group-item list-group-item-action active"
+                                data-bs-toggle="tab">
+                                <i class="bi bi-person"></i> My Profile
+                            </a>
+                            <a href="#change-password" class="list-group-item list-group-item-action"
+                                data-bs-toggle="tab">
+                                <i class="bi bi-shield-lock"></i> Change Password
+                            </a>
+                            <a href="#orders" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                <i class="bi bi-bag"></i> Orders
+                            </a>
+                            <a href="#account-settings" class="list-group-item list-group-item-action"
+                                data-bs-toggle="tab">
+                                <i class="bi bi-gear"></i> Account Settings
+                            </a>
+                        </div>
+                    </aside>
+
+                    <!-- Content -->
+                    <section class="col-md-9 mt-4 mt-md-0">
+                        <div class="tab-content">
+                            <!-- My Profile -->
+                            <div class="tab-pane fade show active" id="profile">
+                                <div class="card p-4">
+                                    <h4 class="fw-bold mb-3">Personal Information</h4>
+                                    <div class="row">
+                                        <div class="col-md-4 text-center d-flex flex-column profile-image">
+                                            <img src="./assets/images/17580fa67278ff7a25e05b3c310a40e5.png"
+                                                class="align-self-center">
+                                            <button class="btn btn-outline-primary mt-2 btn-sm">Change Avatar</button>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label class="form-label fw-bold">Full Name</label>
+                                                    <input type="text" class="form-control" value="John Doe">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label fw-bold">Email</label>
+                                                    <input type="email" class="form-control" value="example@gmail.com"
+                                                        disabled>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label fw-bold">Phone Number</label>
+                                                    <input type="tel" class="form-control" value="0123 456 789">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label fw-bold">Address</label>
+                                                    <input type="text" class="form-control"
+                                                        value="123 ABC Street, New York">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Change Password -->
+                            <div class="tab-pane fade" id="change-password">
+                                <div class="card p-4">
+                                    <h4 class="fw-bold mb-3">Change Password</h4>
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Current Password</label>
+                                            <input type="password" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">New Password</label>
+                                            <input type="password" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Confirm New Password</label>
+                                            <input type="password" class="form-control">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Update Password</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Orders -->
+                            <div class="tab-pane fade" id="orders">
+                                <div class="card p-4">
+                                    <h4 class="fw-bold mb-3">Order History</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered text-center align-middle">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Order ID</th>
+                                                    <th>Order Date</th>
+                                                    <th>Status</th>
+                                                    <th>Total</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>#123456</td>
+                                                    <td>12/03/2025</td>
+                                                    <td><span class="badge bg-success">Delivered</span></td>
+                                                    <td>2,000,000 VND</td>
+                                                    <td><a href="#" class="btn btn-outline-primary btn-sm">View
+                                                            Details</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#654321</td>
+                                                    <td>10/03/2025</td>
+                                                    <td><span class="badge bg-warning">Shipping</span></td>
+                                                    <td>1,500,000 VND</td>
+                                                    <td><a href="#" class="btn btn-outline-primary btn-sm">View
+                                                            Details</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Account Settings -->
+                            <div class="tab-pane fade" id="account-settings">
+                                <div class="card p-4">
+                                    <h4 class="fw-bold mb-3">Account Settings</h4>
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Language</label>
+                                            <select class="form-select">
+                                                <option selected>English</option>
+                                                <option>Tiếng Việt</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Notifications</label>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="emailNotify"
+                                                    checked>
+                                                <label class="form-check-label" for="emailNotify">Receive notifications
+                                                    via
+                                                    email</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="smsNotify">
+                                                <label class="form-check-label" for="smsNotify">Receive notifications
+                                                    via SMS</label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+            </div>
+        </section>
+        <!-- Footer start -->
+        <footer class="py-4 mt-5">
+            <div class="container-lg">
+                <div class="row footer">
+                    <!-- Info -->
+                    <div class="col-sm-5 footer-info">
+                        <h5 class="title text-uppercase fw-bold">About us</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptatem nostrum
+                            eligendi
+                            natus maxime saepe ducimus et incidunt pariatur est veritatis cumque rerum
+                            necessitatibus
+                            voluptates tempora facilis perspiciatis quasi repellendus!</p>
+                        <a href="about.html"><img src="./assets/images/logo.png " class="w-50" alt=""></a>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="col-sm-3 footer-link">
+                        <h5 class="title text-uppercase fw-bold">Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="text-decoration-none ">Home</a></li>
+                            <li><a href="product-index.html" class="text-decoration-none ">Product</a></li>
+                            <li><a href="#" class="text-decoration-none ">Promotion</a></li>
+                            <li><a href="#" class="text-decoration-none ">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-sm-4 footer-contact">
+                        <h5 class="title text-uppercase fw-bold">Contact</h5>
+                        <p><i class="bi bi-geo-alt-fill"></i> 123 Đường ABC, TP.HCM</p>
+                        <p><i class="bi bi-telephone-fill"></i> 0123 456 789</p>
+                        <p><i class="bi bi-envelope-fill"></i> support@example.com</p>
+                        <div class="d-flex gap-2 social-links">
+                            <a href="#" class=" fs-4"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class=" fs-4"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class=" fs-4"><i class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-center pt-3 mt-3 border-top">
+                    <p>&copy; 2025 - Bản quyền thuộc về <a href="https://github.com/Qianga0519" target="_blank"
+                            class="text-decoration-none fw-bold">Qiang@0519</a></p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer end -->
+    </main>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+
+    <!-- cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./assets/js/app.js"></script>
+
+
+</body>
+
+</html>
