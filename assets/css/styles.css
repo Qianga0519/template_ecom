@@ -573,4 +573,47 @@ footer .footer-contact .social-links a:hover i {
   transform: scale(1);
 }
 
+.product-detail .product-images .main-image {
+  position: relative;
+}
+.product-detail .product-images .main-image img {
+  aspect-ratio: 16/9;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-fit: fill;
+}
+.product-detail .product-images .main-image .swiper-button-next,
+.product-detail .product-images .main-image .swiper-button-prev {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+  color: rgb(24, 119, 242);
+}
+.product-detail .product-images .main-image .swiper-button-next:hover,
+.product-detail .product-images .main-image .swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.product-detail .product-images .thumbnail-images .swiper-thumbnail-images {
+  overflow: hidden;
+}
+.product-detail .product-images .thumbnail-images .swiper-thumbnail-images .swiper-wrapper .thumbnail-item img {
+  border-radius: 0.5rem;
+  aspect-ratio: 16/9;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-fit: fill;
+}
+.product-detail .product-images .thumbnail-images .swiper-thumbnail-images .swiper-wrapper .thumbnail-item.active img {
+  padding: 2px;
+  border: 1px solid rgb(24, 119, 242);
+}
+
 /*# sourceMappingURL=styles.css.map */
