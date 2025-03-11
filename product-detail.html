@@ -78,7 +78,8 @@
                             </a>
                             <ul class="dropdown-menu" id="account-menu">
                                 <li><a href="profile.html">Profile</a></li>
-                                <li><a href="#">Orders</a></li>
+
+                                <li><a href="wishlist.html">Wishlist</a></li>
                                 <li><a href="#">Logout</a></li>
                             </ul>
                         </div>
@@ -106,11 +107,9 @@
             </nav>
         </div>
         <!-- Product Detail Section -->
-        <!-- Product Detail Section -->
         <section class="product-detail my-4">
             <!-- Product Title -->
             <div class="container-xl">
-
                 <h5 class="product-title  fw-bold mb-4">
                     Samsung Galaxy S25 Ultra
                     <span class="rating-value text-warning ms-2">
@@ -676,24 +675,38 @@
         let thumbnails = document.querySelectorAll(".thumbnail-item");
         let mainImage = document.getElementById("main-product-image");
         let index = 0;
+        // Cập nhật ảnh chính và trạng thái active
         function updateMainImage(newIndex) {
             if (newIndex >= 0 && newIndex < thumbnails.length) {
+                thumbnails[index].classList.remove("active"); 
                 index = newIndex;
-                mainImage.src = thumbnails[index].getAttribute("data-img");
+                mainImage.src = thumbnails[index].getAttribute("data-img"); 
+                thumbnails[index].classList.add("active"); 
+                thumbnailSwiper.slideTo(index);
             }
         }
 
+        // Xử lý sự kiện khi bấm nút prev
         document.querySelector(".main-prev").addEventListener("click", function () {
             updateMainImage(index - 1);
         });
 
+        // Xử lý sự kiện khi bấm nút next
         document.querySelector(".main-next").addEventListener("click", function () {
             updateMainImage(index + 1);
         });
 
+        // Xử lý sự kiện click vào thumbnail
+        thumbnails.forEach((item, i) => {
+            item.addEventListener("click", function () {
+                updateMainImage(i);
+            });
+        });
+
         // Thumbnail click handler
-        document.querySelectorAll('.thumbnail-item').forEach(item => {
+        document.querySelectorAll('.thumbnail-item').forEach((item, index) => {
             item.addEventListener('click', function () {
+
                 // Remove active class from all thumbnails
                 document.querySelectorAll('.thumbnail-item').forEach(thumb => {
                     thumb.classList.remove('active');
@@ -701,7 +714,7 @@
 
                 // Add active class to clicked thumbnail
                 this.classList.add('active');
-
+                thumbnailSwiper.slideTo(index);
                 // Update main image
                 const mainImage = document.getElementById('main-product-image');
                 mainImage.src = this.getAttribute('data-img');
