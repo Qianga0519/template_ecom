@@ -196,3 +196,78 @@ body {
         font-size: 0.75rem;
     }
 }
+
+// login styles
+body {
+    background-color: #f5f7fb;
+    height          : 100vh;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+}
+
+.login-container {
+    max-width: 400px;
+    width    : 100%;
+    padding  : 15px;
+}
+
+.login-card {
+    border-radius: 10px;
+    overflow     : hidden;
+    box-shadow   : 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+    background-color: #212529;
+    color           : white;
+    padding         : 20px;
+    text-align      : center;
+}
+
+.login-body {
+    padding: 30px;
+}
+
+.form-floating {
+    margin-bottom: 20px;
+}
+
+.btn-login {
+    height     : 50px;
+    font-size  : 16px;
+    font-weight: 500;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-footer a {
+    color          : #0d6efd;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+.password-toggle {
+    cursor   : pointer;
+    position : absolute;
+    right    : 15px;
+    top      : 50%;
+    transform: translateY(-50%);
+    z-index  : 10;
+}
+
+@media (max-width: 576px) {
+    .login-container {
+        padding: 10px;
+    }
+
+    .login-body {
+        padding: 20px;
+    }
+}
