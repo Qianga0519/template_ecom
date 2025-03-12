@@ -1,3 +1,4 @@
+const body = document.body;
 const swiper = new Swiper('.swiperHero', {
     slidesPerView: 1,
 })
@@ -128,3 +129,13 @@ function startCountdown() {
 }
 
 document.addEventListener("DOMContentLoaded", startCountdown);
+
+
+const bodyHeight = body.scrollHeight;
+const processPageElement = document.querySelector('.process-page');
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const maxScroll = body.scrollHeight - window.innerHeight;
+    const widthPercentage = (scrollPosition / maxScroll) * 100;
+    processPageElement.style.width = `${widthPercentage}%`;
+});
