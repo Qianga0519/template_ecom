@@ -389,6 +389,13 @@ header.header {
             @extend %button-prev-next-swiper;
 
             .fs-item {
+                transition: .2s linear;
+                border    : 1px solid white;
+
+                &:hover {
+                    border: 1px solid var.$gray-hover;
+                }
+
                 .card {
                     img {
                         padding: 5px;
@@ -467,7 +474,7 @@ header.header {
                 left            : 0;
                 width           : 100%;
                 height          : 100%;
-                content         : "View";
+                content         : "";
                 color           : var.$blue;
                 font-weight     : bold;
                 text-align      : center;
@@ -477,7 +484,6 @@ header.header {
                 align-items     : center;
                 font-size       : 1rem;
                 transition      : opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-                font-family     : Verdana, Geneva, Tahoma, sans-serif;
                 transform       : scale(0.7);
             }
 
@@ -665,7 +671,7 @@ footer {
             left            : 0;
             width           : 100%;
             height          : 100%;
-            content         : "View";
+            content         : "";
             color           : var.$blue;
             font-weight     : bold;
             text-align      : center;
@@ -675,7 +681,6 @@ footer {
             align-items     : center;
             font-size       : 1rem;
             transition      : opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-            font-family     : Verdana, Geneva, Tahoma, sans-serif;
             transform       : scale(0.7);
         }
 

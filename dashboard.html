@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <!-- Document metadata and character encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- CSS stylesheets from local node_modules -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/styles-admin.css">
+
+    <!-- CDN fallback for CSS libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+    <!-- Mobile sidebar toggle button -->
+    <div class="d-md-none position-fixed top-0 end-0 p-3 z-index-high">
+        <button class="btn btn-dark" id="sidebarToggle">
+            <i class="bi bi-list"></i>
+        </button>
+    </div>
+
+    <main class="d-flex flex-nowrap position-relative">
+        <!-- Sidebar -->
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar" id="sidebar">
+
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <i class="bi bi-speedometer2 me-2 fs-4"></i>
+                <span class="fs-4 sidebar-text">Admin Dashboard</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page">
+                        <i class="bi bi-house-door me-2"></i>
+                        <span class="sidebar-text">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-people me-2"></i>
+                        <span class="sidebar-text">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-grid me-2"></i>
+                        <span class="sidebar-text">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-cart me-2"></i>
+                        <span class="sidebar-text">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-graph-up me-2"></i>
+                        <span class="sidebar-text">Reports</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-gear me-2"></i>
+                        <span class="sidebar-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+        <!-- Main content area -->
+        <div class="content-wrapper flex-grow-1 p-3 p-md-4">
+            <header class="mb-4">
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 gap-md-0">
+                    <h1 class="h3 p-3">Overview</h1>
+                    <div
+                        class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2 gap-sm-3 w-100 w-md-auto">
+                        <div class="position-relative me-0 me-sm-3">
+                            <i class="bi bi-bell fs-4"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                3
+                            </span>
+                        </div>
+                        <div class="input-group w-100" style="max-width: 300px;">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- User dropdown menu -->
+
+                    <div class="dropdown-admin">
+                        <!-- Dropdown toggle button -->
+                        <a href="#" class="d-flex align-items-center gap-2 text-white text-decoration-none ms-auto">
+                            <strong class="flex-grow-1 text-dark">Admin User</strong>
+                            <!-- User avatar -->
+                            <img src="https://github.com/mdo.png" alt="User Avatar" width="32" height="32"
+                                class="rounded-circle me-2">
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="style-none shadow ">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Logout</a></li>
+                            <li><a href="#">Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats cards -->
+            <div class="row g-3 g-md-4 mb-4">
+                <div class="col-6 col-md-3">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-subtitle mb-1 text-muted">Total Sales</h6>
+                                    <h2 class="card-title mb-0 fs-4 fs-md-2">$24,500</h2>
+                                </div>
+                                <div class="bg-primary bg-opacity-10 p-2 p-md-3 rounded">
+                                    <i class="bi bi-currency-dollar text-primary fs-4"></i>
+                                </div>
+                            </div>
+                            <div class="mt-3 small">
+                                <span class="text-success">
+                                    <i class="bi bi-arrow-up"></i> 12.5%
+                                </span>
+                                <span class="text-muted ms-2">Since last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-subtitle mb-1 text-muted">New Users</h6>
+                                    <h2 class="card-title mb-0 fs-4 fs-md-2">1,245</h2>
+                                </div>
+                                <div class="bg-success bg-opacity-10 p-2 p-md-3 rounded">
+                                    <i class="bi bi-people text-success fs-4"></i>
+                                </div>
+                            </div>
+                            <div class="mt-3 small">
+                                <span class="text-success">
+                                    <i class="bi bi-arrow-up"></i> 8.3%
+                                </span>
+                                <span class="text-muted ms-2">Since last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-subtitle mb-1 text-muted">Orders</h6>
+                                    <h2 class="card-title mb-0 fs-4 fs-md-2">854</h2>
+                                </div>
+                                <div class="bg-warning bg-opacity-10 p-2 p-md-3 rounded">
+                                    <i class="bi bi-cart text-warning fs-4"></i>
+                                </div>
+                            </div>
+                            <div class="mt-3 small">
+                                <span class="text-danger">
+                                    <i class="bi bi-arrow-down"></i> 2.7%
+                                </span>
+                                <span class="text-muted ms-2">Since last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-subtitle mb-1 text-muted">Visitors</h6>
+                                    <h2 class="card-title mb-0 fs-4 fs-md-2">12,589</h2>
+                                </div>
+                                <div class="bg-info bg-opacity-10 p-2 p-md-3 rounded">
+                                    <i class="bi bi-eye text-info fs-4"></i>
+                                </div>
+                            </div>
+                            <div class="mt-3 small">
+                                <span class="text-success">
+                                    <i class="bi bi-arrow-up"></i> 15.2%
+                                </span>
+                                <span class="text-muted ms-2">Since last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts and tables section -->
+            <div class="row g-3 g-md-4 mb-4">
+                <!-- Sales chart -->
+                <div class="col-12 col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div
+                            class="card-header bg-white border-0 d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 gap-sm-0">
+                            <h5 class="card-title mb-0">Sales Overview</h5>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
+                                    id="salesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    This Month
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="salesDropdown">
+                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                    <li><a class="dropdown-item" href="#">This Week</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container" style="height: 300px;">
+                                <!-- Chart will be rendered here by JavaScript -->
+                                <div class="d-flex justify-content-center align-items-center h-100 text-muted">
+                                    <p>Sales chart will be displayed here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top products -->
+                <div class="col-12 col-lg-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white border-0">
+                            <h5 class="card-title mb-0">Top Products</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <ul class="list-group list-group-flush">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center px-3 px-md-4 py-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-light rounded" style="width: 40px; height: 40px;"></div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Product A</h6>
+                                            <small class="text-muted">Category</small>
+                                        </div>
+                                    </div>
+                                    <span class="badge bg-success rounded-pill">$1,245</span>
+                                </li>
+                                <!-- Other list items remain the same but with px-3 px-md-4 classes -->
+                                <!-- ... -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent orders table -->
+            <div class="card border-0 shadow-sm">
+                <div
+                    class="card-header bg-white border-0 d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 gap-sm-0">
+                    <h5 class="card-title mb-0">Recent Orders</h5>
+                    <button class="btn btn-sm btn-primary">View All</button>
+                </div>
+                <div class="card-body p-2 p-md-3">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Order ID</th>
+                                    <th scope="col">Customer</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Product</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Date</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-0001</td>
+                                    <td>John Doe</td>
+                                    <td class="d-none d-md-table-cell">Product A</td>
+                                    <td class="d-none d-md-table-cell">2023-04-15</td>
+                                    <td>$120.00</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end"
+                                                aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item" href="#">View</a></li>
+                                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Other table rows remain the same but with d-none d-md-table-cell classes for Product and Date -->
+                                <!-- ... -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="py-4 mt-5">
+                <div class="container-fluid px-0">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <p class="mb-3 mb-md-0 text-muted">© 2023 Admin Dashboard. All rights reserved.</p>
+                        <div>
+                            <a href="#" class="text-muted me-3"><i class="bi bi-github"></i></a>
+                            <a href="#" class="text-muted me-3"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-muted"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+
+    <!-- cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Optional: Add Chart.js for the charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Initialize tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+        // Mobile sidebar toggle
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>

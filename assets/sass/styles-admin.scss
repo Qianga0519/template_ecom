@@ -1,0 +1,198 @@
+// Admin Dashboard Styles
+@use "_variables"as var;
+// Variables
+$sidebar-width   : 280px;
+$primary-color   : #0d6efd;
+$secondary-color : #6c757d;
+$success-color   : #198754;
+$info-color      : #0dcaf0;
+$warning-color   : #ffc107;
+$danger-color    : #dc3545;
+$light-color     : #f8f9fa;
+$dark-color      : #212529;
+
+
+// General styles
+body {
+    font-family     : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fb;
+    overflow-x      : hidden;
+}
+
+// Z-index utility
+.z-index-high {
+    z-index: 1050;
+}
+
+// Sidebar styles
+.sidebar {
+    position  : sticky;
+    top       : 0;
+    height    : 100vh;
+    z-index   : 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width     : $sidebar-width;
+
+    .nav-link {
+        border-radius: 5px;
+        margin-bottom: 5px;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &.active {
+            background-color: $primary-color;
+        }
+    }
+}
+
+// Content wrapper
+.content-wrapper {
+    min-height: 100vh;
+}
+
+// Cards
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        transform : translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+// Stats cards
+.stats-card {
+    border-radius: 10px;
+    overflow     : hidden;
+}
+
+// Dropdown styles admin
+.dropdown-admin {
+    position: relative;
+
+    a {
+        strong {
+            font-weight: 600;
+            width      : 100%;
+            min-width  : 100px;
+            text-align : center;
+        }
+    }
+
+
+    &:hover {
+        ul {
+            visibility: visible;
+            opacity   : 1;
+        }
+    }
+
+    ul {
+        position: absolute;
+
+        top             : 100%;
+        right           : 0;
+        padding         : 0;
+        background-color: #fff;
+        padding         : 3px;
+        border-radius   : 5px;
+        box-shadow      : 0 2px 5px rgba(0, 0, 0, 0.1);
+        visibility      : hidden;
+        z-index         : 200;
+        opacity         : 0;
+
+        li {
+            list-style: none;
+            padding   : .2rem 1rem;
+
+            a {
+                text-decoration: none;
+                color          : var.$gray-darker;
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+
+                a {
+                    color: var.$blue;
+                }
+            }
+        }
+    }
+}
+
+// Table styles
+.table {
+    th {
+        font-weight: 600;
+        color      : $secondary-color;
+    }
+
+    td {
+        vertical-align: middle;
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 992px) {
+    .sidebar {
+        width: 70px !important;
+
+        .sidebar-text {
+            display: none;
+        }
+
+        .nav-link i {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position  : fixed;
+        transform : translateX(-100%);
+        transition: transform 0.3s;
+        width     : $sidebar-width !important;
+
+        &.show {
+            transform: translateX(0);
+        }
+
+        .sidebar-text {
+            display: inline-block;
+        }
+    }
+
+    .content-wrapper {
+        margin-left: 0 !important;
+        width      : 100%;
+    }
+
+    // Adjust card hover effect for mobile
+    .card:hover {
+        transform: none;
+    }
+
+    // Make table more mobile-friendly
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+}
+
+// Small mobile devices
+@media (max-width: 576px) {
+    .card-body {
+        padding: 0.75rem;
+    }
+
+    h2.card-title {
+        font-size: 1.5rem;
+    }
+
+    .table-responsive {
+        font-size: 0.75rem;
+    }
+}

@@ -335,6 +335,13 @@ header.header .navbar-account .into-account a:hover {
   transform: translateY(10%);
   opacity: 1;
 }
+.flash-sale-content .swiper-flash-sale .fs-item {
+  transition: 0.2s linear;
+  border: 1px solid white;
+}
+.flash-sale-content .swiper-flash-sale .fs-item:hover {
+  border: 1px solid rgb(224, 224, 224);
+}
 .flash-sale-content .swiper-flash-sale .fs-item .card img {
   padding: 5px;
 }
@@ -389,7 +396,7 @@ header.header .navbar-account .into-account a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  content: "View";
+  content: "";
   color: rgb(24, 119, 242);
   font-weight: bold;
   text-align: center;
@@ -399,7 +406,6 @@ header.header .navbar-account .into-account a:hover {
   align-items: center;
   font-size: 1rem;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   transform: scale(0.7);
 }
 .products .product-content .product-item img {
@@ -532,7 +538,7 @@ footer .footer-contact .social-links a:hover i {
   left: 0;
   width: 100%;
   height: 100%;
-  content: "View";
+  content: "";
   color: rgb(24, 119, 242);
   font-weight: bold;
   text-align: center;
@@ -542,7 +548,6 @@ footer .footer-contact .social-links a:hover i {
   align-items: center;
   font-size: 1rem;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   transform: scale(0.7);
 }
 .product-listing .product-item img {

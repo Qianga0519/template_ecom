@@ -25,8 +25,6 @@
         <header class="header">
             <nav class="navbar navbar-expand-md fixed-top custom-navbar">
                 <div class="container-xl px-2">
-                    <a href="cart.html" class="btn cart-icon border-1 bg"><i class="bi bi-cart"></i></a>
-
                     <!-- Logo and brand name -->
                     <a class="navbar-brand d-none d-sm-flex align-items-center" href="index.html">
                         <img src="./assets/images/logo.png" width="50" alt="">
@@ -73,12 +71,13 @@
                     <div class="navbar-account ">
                         <!-- Dropdown for logged-in users -->
                         <div class="account-dropdown">
+                            <a href="cart.html" class="btn cart-icon border-1 bg"><i class="bi bi-cart"></i></a>
+
                             <a href="#" class="account-icon" id="account-toggle">
                                 <img src="./assets/images/17580fa67278ff7a25e05b3c310a40e5.png" alt="User Avatar">
                             </a>
                             <ul class="dropdown-menu" id="account-menu">
                                 <li><a href="profile.html">Profile</a></li>
-
                                 <li><a href="wishlist.html">Wishlist</a></li>
                                 <li><a href="#">Logout</a></li>
                             </ul>
@@ -678,10 +677,10 @@
         // Cập nhật ảnh chính và trạng thái active
         function updateMainImage(newIndex) {
             if (newIndex >= 0 && newIndex < thumbnails.length) {
-                thumbnails[index].classList.remove("active"); 
+                thumbnails[index].classList.remove("active");
                 index = newIndex;
-                mainImage.src = thumbnails[index].getAttribute("data-img"); 
-                thumbnails[index].classList.add("active"); 
+                mainImage.src = thumbnails[index].getAttribute("data-img");
+                thumbnails[index].classList.add("active");
                 thumbnailSwiper.slideTo(index);
             }
         }

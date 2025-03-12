@@ -1,0 +1,143 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fb;
+  overflow-x: hidden;
+}
+
+.z-index-high {
+  z-index: 1050;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 280px;
+}
+
+.sidebar .nav-link {
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+  background-color: #0d6efd;
+}
+
+.content-wrapper {
+  min-height: 100vh;
+}
+
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.stats-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dropdown-admin {
+  position: relative;
+}
+
+.dropdown-admin a strong {
+  font-weight: 600;
+  width: 100%;
+  min-width: 100px;
+  text-align: center;
+}
+
+.dropdown-admin a:hover ul {
+  display: block;
+}
+
+.dropdown-admin ul {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  padding: .5rem;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+}
+
+.dropdown-admin ul li {
+  list-style: none;
+  padding: .2rem 1rem;
+}
+
+.dropdown-admin ul li a {
+  text-decoration: none;
+  color: var;
+}
+
+.table th {
+  font-weight: 600;
+  color: #6c757d;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    width: 70px !important;
+  }
+  .sidebar .sidebar-text {
+    display: none;
+  }
+  .sidebar .nav-link i {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    width: 280px !important;
+  }
+  .sidebar.show {
+    transform: translateX(0);
+  }
+  .sidebar .sidebar-text {
+    display: inline-block;
+  }
+  .content-wrapper {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+  .card:hover {
+    transform: none;
+  }
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-body {
+    padding: 0.75rem;
+  }
+  h2.card-title {
+    font-size: 1.5rem;
+  }
+  .table-responsive {
+    font-size: 0.75rem;
+  }
+}
